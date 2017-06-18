@@ -22,11 +22,11 @@ def extraction(pixels, width, height, color):
             (red, green, blue) = pixels[x, y]
 
             if color == 'R':
-                (red, green, blue) = (red, 0, 0)
+                (red, green, blue) = (0, green, blue)
             elif color == 'G':
-                (red, green, blue) = (0, green, 0)
+                (red, green, blue) = (red, 0, blue)
             elif color == 'B':
-                (red, green, blue) = (0, 0, blue)
+                (red, green, blue) = (red, green, 0)
 
             pixels[x, y] = (red, green, blue)
 

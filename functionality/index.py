@@ -9,9 +9,9 @@ def index(path, operation=4, bits=24, color='R'):
     pixels = image.load()
     (width, height) = image.size
 
-    # if operation == 1:
-        # functionality.color_depth.quantize(image, bits)
-    if operation == 2:
+    if operation == 1:
+        functionality.operations.quantize(pixels, width, height, bits)
+    elif operation == 2:
         functionality.operations.extraction(pixels, width, height, color)
     elif operation == 3:
         functionality.operations.vertical_flip(pixels, width, height)

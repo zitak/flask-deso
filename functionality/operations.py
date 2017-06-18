@@ -29,3 +29,17 @@ def extraction(pixels, width, height, color):
                 (red, green, blue) = (0, 0, blue)
 
             pixels[x, y] = (red, green, blue)
+
+
+def quantize(pixels, width, height, bits):
+    offset = 2 ** (8 - (bits // 3))
+
+    for y in range(0, height):
+        for x in range(0, width):
+            (red, green, blue) = pixels[x, y]
+
+            red = (red // offset) * offset
+            green = (green // offset) * offset
+            blue = (blue // offset) * offset
+
+            pixels[x, y] = (red, green, blue)

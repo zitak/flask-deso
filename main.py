@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 import functionality.index
-from PIL import Image
+from io import BytesIO
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg'])
 
@@ -17,20 +17,25 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET','POST'])
 def upload():
 
     image = request.files['image']
-    operation = request.form['operation']
+    form = request.form
+    operation = form['operation']
 
     if image and allowed_file(image.filename) and operation:
         new_image = functionality.index.index(image, operation)
-        return render_template('index.html')
+        if 'download' in form:
+            img_io = BytesIO()
+            new_image.save(img_io, 'JPEG')
+            img_io.seek(0)
+            #TODO new name and extension
+            return send_file(img_io, mimetype='image/jpeg', as_attachment=True, attachment_filename='new.jpg')
+        elif 'preview' in form:
+            #TODO
+            print("preview")
     return render_template('index.html')
-
-
-# @app.route('/')
-# def download(image):
 
 
 if __name__ == '__main__':

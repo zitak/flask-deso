@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, redirect
+from flask import Flask, render_template, request, send_file
 import functionality.index
 from io import BytesIO
 
@@ -38,6 +38,7 @@ def upload():
             return send_file(img_io, mimetype='image', as_attachment=True, attachment_filename=new_name)
         if 'preview' in form:
             new_image.show()
+            # TODO save values from form
     return render_template('index.html')
 
 

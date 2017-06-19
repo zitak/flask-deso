@@ -27,5 +27,3 @@ def index(image, operation):
         functionality.operations.horizontal_flip(pixels, width, height)
 
     return image
-    # path = path.split('.')
-    # image.save(path[0] + "new." + path[1])

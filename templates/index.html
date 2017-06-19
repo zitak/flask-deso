@@ -7,6 +7,7 @@
 <body>
 
     <form method="post" enctype="multipart/form-data">
+
         <div>
             <label for="image">Choose image</label>
             <input type="file" name="image" id="image" required><br>
@@ -14,31 +15,31 @@
 
         <div>
             <p>Decrease bit depth</p>
-            <input type="radio" name="operation" id="9bits" value="depth_9bits" required>
+            <input type="radio" name="operation" id="9bits" value="depth_9bits" required/>
             <label for="9bits">9 bits</label><br>
-            <input type="radio" name="operation" id="12bits" value="depth_12bits">
+            <input type="radio" name="operation" id="12bits" value="depth_12bits"/>
             <label for="12bits">12 bits</label><br>
-            <input type="radio" name="operation" id="15bits" value="depth_15bits">
+            <input type="radio" name="operation" id="15bits" value="depth_15bits"/>
             <label for="15bits">15 bits</label><br>
 
             <p>Extract color</p>
-            <input type="radio" name="operation" id="red" value="extract_red">
+            <input type="radio" name="operation" id="red" value="extract_red"/>
             <label for="red">red</label><br>
-            <input type="radio" name="operation" id="green" value="extract_green">
+            <input type="radio" name="operation" id="green" value="extract_green"/>
             <label for="green">green</label><br>
-            <input type="radio" name="operation" id="blue" value="extract_blue">
+            <input type="radio" name="operation" id="blue" value="extract_blue"/>
             <label for="blue">blue</label><br>
 
             <p>Flip</p>
-            <input type="radio" name="operation" id="horizontal" value="flip_horizontal">
+            <input type="radio" name="operation" id="horizontal" value="flip_horizontal"/>
             <label for="horizontal">horizontally</label><br>
-            <input type="radio" name="operation" id="vertical" value="flip_vertical">
+            <input type="radio" name="operation" id="vertical" value="flip_vertical"/>
             <label for="vertical">vertically</label><br>
 
             <br>
-            <input type="submit" name="download" value="Save">
+            <input type="submit" name="preview" value="Preview"/>
             <br>
-            <input type="submit" name="preview" value="Preview">
+            <input type="submit" name="download" value="Save"/>
 
         </div>
 
